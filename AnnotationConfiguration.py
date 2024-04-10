@@ -4,6 +4,8 @@ import json
 import pprint
 import datetime
 
+import os
+
 class BlebAnnotation:
     __x: float
     __y: float
@@ -107,7 +109,7 @@ class AnnotationConfiguration:
             'annotations': temp,
         }
 
-        output_file_path = f'{output_path}/annotation.json'
+        output_file_path = os.path.join(output_path, '/annotation.json')
 
         with open(output_file_path, 'w', encoding='utf-8') as file:
             json.dump(config, file, ensure_ascii=False, indent=4)
@@ -123,9 +125,9 @@ class AnnotationConfiguration:
             'file_name': self.__file_name,
             'annotations': temp,
         }
-        current_timestamp = datetime.datetime.now().strftime('%d-%m-%Y|%H:%M:%S')
+        current_timestamp = datetime.datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
 
-        output_file_path = f'{output_path}/annotation_{current_timestamp}.json'
+        output_file_path = os.path.join(output_path, f'annotation--{current_timestamp}.json')
 
         with open(output_file_path, 'w', encoding='utf-8') as file:
             json.dump(config, file, ensure_ascii=False, indent=4)
