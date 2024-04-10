@@ -1,0 +1,38 @@
+appnope @ file:///Users/ktietz/demo/mc3/conda-bld/appnope_1629146036738/work
+asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
+backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
+contourpy==1.2.1
+cycler==0.12.1
+decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
+exceptiongroup @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b2258scr33/croot/exceptiongroup_1706031391815/work
+executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
+fonttools==4.51.0
+importlib_resources==6.4.0
+ipython @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_6599f73fa7/croot/ipython_1694181355402/work
+jedi @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-f1t6hma6/jedi_1644315882177/work
+kiwisolver==1.4.5
+matplotlib==3.8.4
+matplotlib-inline @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_f6fdc0hldi/croots/recipe/matplotlib-inline_1662014472341/work
+numpy==1.26.4
+packaging==24.0
+parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
+pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+pillow==10.3.0
+prompt-toolkit @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_c63v4kqjzr/croot/prompt-toolkit_1704404354115/work
+ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
+pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
+Pygments @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_29bs9f_dh9/croot/pygments_1684279974747/work
+pyparsing==3.1.2
+PyQt5==5.15.10
+PyQt5-Qt5==5.15.13
+PyQt5-sip==12.13.0
+python-dateutil==2.9.0.post0
+scipy==1.13.0
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
+traitlets @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_6301rd5qbe/croot/traitlets_1671143894285/work
+typing_extensions @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_6ejdc7ufhc/croot/typing_extensions_1705599306111/work
+vtk==9.3.0
+wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
+zipp==3.18.1
