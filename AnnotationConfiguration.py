@@ -109,7 +109,7 @@ class AnnotationConfiguration:
             'annotations': temp,
         }
 
-        output_file_path = os.path.join(output_path, '/annotation.json')
+        output_file_path = os.path.join(output_path, 'annotation.json')
 
         with open(output_file_path, 'w', encoding='utf-8') as file:
             json.dump(config, file, ensure_ascii=False, indent=4)

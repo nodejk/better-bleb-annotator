@@ -64,7 +64,7 @@ class MainWindow(QMainWindow):
 
 
     def set_window(self):
-        self.setWindowTitle('Annotation')
+        self.setWindowTitle('Bleb Annotator')
         self.resize(1000, 800)
         self.move(int((QDesktopWidget().width() - self.width()) / 2),
                   int((QDesktopWidget().height() - self.height()) / 2))
