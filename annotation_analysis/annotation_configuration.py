@@ -1,10 +1,7 @@
 import typing
-import uuid
 import json
-import pprint
-import datetime
-
 import os
+
 
 class BlebAnnotation:
     __x: float
@@ -33,6 +30,10 @@ class BlebAnnotation:
         return self.__index
     
 
+    def set_annotator_name(self, annotator_name: str) -> None:
+        self.__annotated_by = annotator_name
+    
+
     def get_annotator_name(self, ) -> str:
         return self.__annotated_by
     
@@ -47,12 +48,7 @@ class BlebAnnotation:
             'index': self.__index,
             'annotated_by': self.__annotated_by,
         }
-
-
-class Encoder(json.JSONEncoder):
-    def default(self, o: typing.Any) -> typing.Any:
-        return super().default(o)
-
+    
 
 class AnnotationConfiguration:
     __annotations: typing.Dict[str, BlebAnnotation]
@@ -67,12 +63,6 @@ class AnnotationConfiguration:
         for key, val in annotations.items():
             self.__annotations[key] = BlebAnnotation(**val)
         self.__file_name = file_name
-        
-
-    def remove_annotation_by_index(self, index: int):
-        key_idx: str = str(index)
-        if key_idx in self.__annotations:
-            del self.__annotations[key_idx]
 
 
     def add_point(
@@ -90,7 +80,11 @@ class AnnotationConfiguration:
         )
         self.__annotations[str(index)] = _temp
 
+
+    def get_file_name(self,) -> str:
+        return self.__file_name
     
+
     def get_annotations(self,) -> typing.List[BlebAnnotation]:
         temp: typing.List[BlebAnnotation] = []
 
@@ -99,23 +93,6 @@ class AnnotationConfiguration:
 
         return temp
     
-    def save_config(self, output_path):
-        temp = {}
-
-        for key, val in self.__annotations.items():
-            temp[key] = val.__dict__()
-
-        config = {
-            'file_name': self.__file_name,
-            'annotations': temp,
-        }
-
-        output_file_path = os.path.join(output_path, 'annotation.json')
-
-        with open(output_file_path, 'w', encoding='utf-8') as file:
-            json.dump(config, file, ensure_ascii=False, indent=4)
-    
-
     def save_current_annotation_config(self, output_path):
         temp = {}
 
@@ -126,13 +103,12 @@ class AnnotationConfiguration:
             'file_name': self.__file_name,
             'annotations': temp,
         }
-        current_timestamp = datetime.datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
 
-        output_file_path = os.path.join(output_path, f'annotation--{current_timestamp}.json')
+        output_file_path = os.path.normpath(output_path)
 
         with open(output_file_path, 'w', encoding='utf-8') as file:
             json.dump(config, file, ensure_ascii=False, indent=4)
-    
+
 
     def print(self,):
         for key, val in self.__annotations.items():
@@ -140,11 +116,7 @@ class AnnotationConfiguration:
 
 def get_annotation_configuration(
         json_path: typing.Optional[str], 
-        file_name: typing.Optional[str],
     ) -> AnnotationConfiguration:
-
-    if json_path == None and file_name != None:
-        return AnnotationConfiguration({}, file_name)
     
     try:
         with open(json_path, 'r') as file:
