@@ -35,6 +35,7 @@ POINTS = []
 RED = (204, 10, 10)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
 
 COLORS = vtk.vtkUnsignedCharArray()
 COLORS.SetNumberOfComponents(3)
@@ -151,7 +152,7 @@ class MouseInteractorPickingActor(vtk.vtkInteractorStyleTrackballCamera):
         if self.__mode == ApplicationMode.ADD:
             PICKED_POINT_INDEX.append(index)
 
-            actor = self.get_sphere(index, POINTS[index], 0.3, self.current_annotator, BLUE)
+            actor = self.get_sphere(index, POINTS[index], 0.3, self.current_annotator, YELLOW)
 
             self.GetInteractor().GetRenderWindow().GetRenderers().GetFirstRenderer().AddActor(actor)
 
@@ -170,7 +171,10 @@ class MouseInteractorPickingActor(vtk.vtkInteractorStyleTrackballCamera):
 
             actor = picker.GetActor()
                 
-            if actor and (actor.GetProperty().GetAmbientColor() == BLUE or actor.GetProperty().GetAmbientColor() == GREEN):
+            if actor and (
+                actor.GetProperty().GetAmbientColor() == BLUE or 
+                actor.GetProperty().GetAmbientColor() == GREEN or 
+                actor.GetProperty().GetAmbientColor() == YELLOW):
                 renderer.RemoveActor(actor)
 
                 self.annotation_config.remove_annotation_by_index(actor.index)

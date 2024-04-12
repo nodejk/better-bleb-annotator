@@ -23,6 +23,7 @@ class MainWindow(QMainWindow):
     delete_annotation_button: QPushButton
     done_button: QPushButton
     save_button: QPushButton
+    annotation_file_name: QLabel
 
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -68,8 +69,13 @@ class MainWindow(QMainWindow):
         self.resize(1000, 800)
         self.move(int((QDesktopWidget().width() - self.width()) / 2),
                   int((QDesktopWidget().height() - self.height()) / 2))
+    
 
     def init_tools(self):
+
+        self.annotation_file_name = QLabel(f'Currently opened: {None}')
+        self.annotation_file_name.show()
+
         self.open_button = QPushButton('open folder')
         self.open_button.clicked.connect(self.open_mesh_folder)
         
@@ -89,6 +95,9 @@ class MainWindow(QMainWindow):
         self.save_button.clicked.connect(self.save)
         self.save_button.setEnabled(False)
 
+        tools_out = QWidget()
+        layout_out = QVBoxLayout()
+
         tools = QWidget()
         layout = QHBoxLayout()
         
@@ -97,10 +106,15 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.delete_annotation_button)
         layout.addWidget(self.done_button)
         layout.addWidget(self.save_button)
-        
+
         tools.setLayout(layout)
 
-        return tools
+        layout_out.addWidget(self.annotation_file_name)
+        layout_out.addWidget(tools)
+        
+        tools_out.setLayout(layout_out)
+
+        return tools_out
 
 
     def save(self,):
@@ -168,6 +182,8 @@ class MainWindow(QMainWindow):
             self.annotation_configuration = get_annotation_configuration(
                 annotation_config_path, self.get_mesh_name(input_folder)
             )
+
+            self.annotation_file_name.setText(f'Currently opened: {self.get_mesh_name(input_folder)}')
 
             self.main_layout.removeWidget(self.viewer.vtkWidget)
 
