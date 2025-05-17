@@ -41,4 +41,4 @@ After successfully finisihing the instally, simply run the following command and
 
 Here's a video guide of annotation process:
 
-<video src='./recording.mov' frameborder="0" allowfullscreen="true"/>
+<video src="https://github.com/nodejk/better-bleb-annotator/blob/main/recording.mov" frameborder="0" allowfullscreen="true"/>
