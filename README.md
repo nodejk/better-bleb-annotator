@@ -41,7 +41,4 @@ After successfully finisihing the instally, simply run the following command and
 
 Here's a video guide of annotation process:
 
-<figure class="video_container">
-  <iframe src='./recording.mov' frameborder="0" allowfullscreen="true"> 
-</iframe>
-</figure>
+<video src='./recording.mov' frameborder="0" allowfullscreen="true"/>
