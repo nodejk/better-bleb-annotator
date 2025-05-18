@@ -23,14 +23,14 @@ Annotation is handled in the tools with the help of `AnnotationConfiguration` cl
 
 
 ## Usage 🦮
-To use the tool, the user have to re-structure the mesh objects in the directory. Say, we have a 'test.obj' file; to annotate it using the tool, create a directory [say, test], rename the object to 'mesh.obj' and move it in the folder.
+To use the tool, a user have to re-structure the mesh objects in the directory. Say, we have a 'test.obj' file; to annotate it using the tool, create a directory [say, test], rename the object to 'mesh.obj' and move it in the folder.
 
 It is important to structure it in the aforementioned way, as the tools saves annotation files in the same directory the mesh object is in.
 
 
 ## Handy-Features ✨
 
-1. **Auto-save history**: whenever the user opens a mesh, the tool auto-saves the previous annotation configuration with timestamp.
+1. **Auto-save history**: whenever a user opens a mesh, the tool auto-saves the previous annotation configuration with timestamp. hence, restoring a version is as simple as renaming the annotation file with timestamp to simply 'annotation.json'.
 
 
 ## How to annotate? 📝
