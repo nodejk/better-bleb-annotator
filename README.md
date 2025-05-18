@@ -33,7 +33,7 @@ It is important to structure it in the aforementioned way, as the tools saves an
 1. **Auto-save history**: whenever the user opens a mesh, the tool auto-saves the previous annotation configuration with timestamp.
 
 
-## How to run the annotate? 📝
+## How to annotate? 📝
 
 After successfully finisihing the instally, simply run the following command and get annotating:
 
