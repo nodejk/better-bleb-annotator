@@ -41,4 +41,5 @@ After successfully finisihing the instally, simply run the following command and
 
 Here's a video guide of annotation process:
 
-<source src="./recording.mov" type="video/mp4">
+https://github.com/user-attachments/assets/9b8a7477-a0da-4a94-a2ec-1513bd27afc0
+
